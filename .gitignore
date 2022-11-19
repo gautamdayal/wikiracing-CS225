@@ -1,3 +1,6 @@
+# Mac garbage
+.DS_Store
+
 # Prerequisites
 *.d
 
@@ -33,6 +36,3 @@
 
 # Folders
 build/
-
-# CSV Files
-*.csv
