@@ -36,3 +36,6 @@
 
 # Folders
 build/
+
+# Data
+*.csv
