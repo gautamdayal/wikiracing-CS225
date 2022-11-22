@@ -1,6 +1,6 @@
 #include "wikigraph.h"
 
-std::string WikiGraph::print_edge_list() {
+std::string WikiGraph::PrintEdgeList() {
     std::string edge_list;
     for (auto const& pair : adjacency_list) {
         std::string from = pair.first;
@@ -11,9 +11,9 @@ std::string WikiGraph::print_edge_list() {
     return edge_list;
 }
 
-void WikiGraph::parse_from_files(std::vector<std::string> file_names) {
+void WikiGraph::ParseFromFiles(std::vector<std::string> file_names) {
     for (std::string& name : file_names) {
-        parse_from_file(name);
+        ParseFromFile(name);
     }
     // for (auto const& vertice : vertice_set) {
     //     std::cout << vertice << ", ";
@@ -22,7 +22,7 @@ void WikiGraph::parse_from_files(std::vector<std::string> file_names) {
     std::cout << "Number of Pages: " << vertice_set.size() << std::endl;
 }
 
-void WikiGraph::parse_from_file(std::string filename) {
+void WikiGraph::ParseFromFile(std::string filename) {
     std::ifstream ifs(filename);
     std::string line;
     if (ifs.fail()) {
@@ -52,7 +52,7 @@ void WikiGraph::parse_from_file(std::string filename) {
     }
 }
 
-std::vector<std::string> WikiGraph::shortest_path(std::string page_A, std::string page_B) {
+std::vector<std::string> WikiGraph::ShortestPath(std::string page_A, std::string page_B) {
     std::vector<std::string> ret;
 
     return ret;
