@@ -1,5 +1,6 @@
-# Mac garbage
+# Mac garbage and vscode garbage
 .DS_Store
+.vscode
 
 # Prerequisites
 *.d
