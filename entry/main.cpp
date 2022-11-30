@@ -18,9 +18,9 @@ int main() {
     // std::cout << "Use this website to plot the graph" << std::endl;
 
     WikiGraph dj;
-    dj.ParseFromFile("../tests/data/demofile.csv");
+    dj.ParseFromFile("../tests/data/demofile_2.csv");
 
-    std::vector<std::string> path = dj.ShortestPath("a", "e");
+    std::vector<std::string> path = dj.ShortestPath("a", "h");
 
     for (std::string s : path) {
         std::cout << s << ">";

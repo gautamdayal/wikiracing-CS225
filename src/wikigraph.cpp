@@ -75,7 +75,7 @@ std::vector<std::string> WikiGraph::ShortestPath(std::string page_A, std::string
         }
 
         for (std::string neighbor : adjacency_list[current.second]) {
-            if ((!visited.empty() && std::find(visited.begin(), visited.end(), neighbor) != visited.end()) || current.first + 1 < distance[neighbor]) {
+            if (current.first + 1 < distance[neighbor]) {
                 pq.push({current.first + 1, neighbor});
                 previous[neighbor] = current.second;  
                 distance[neighbor] = current.first + 1;
