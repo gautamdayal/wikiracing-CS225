@@ -16,6 +16,12 @@
  * the class encapsulates functionality to parse this data, store it as an adjacency list, and compute the shortest
  * path between any two pages that are in the stored subgraph. Functionality to compute strongly connected components is also 
  * included. 
+ * 
+ * @author Aryaman Dwivedi
+ * @author Rishi Patel
+ * @author Gautam Dayal
+ * 
+ * 
 */
 class WikiGraph {
     public:
