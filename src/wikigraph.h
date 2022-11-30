@@ -6,7 +6,8 @@
 #include <iostream>
 #include <map>
 #include <set>
-
+#include <queue>
+#include <algorithm>
 
 /**
  * @brief Class to store the connections between wikipedia pages as a graph data structure
