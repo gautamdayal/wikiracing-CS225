@@ -39,4 +39,4 @@
 build/
 
 # Data
-*.csv
+data/*.csv
