@@ -55,43 +55,46 @@ void WikiGraph::ParseFromFile(std::string filename) {
 std::vector<std::string> WikiGraph::ShortestPath(std::string page_A, std::string page_B) {
     std::vector<std::string> ret;
 
-    std::vector<int> distances(adjacency_list.size(), INT32_MAX);
+    std::map<std::string, int> distance;
     std::map<std::string, std::string> previous;
-    std::priority_queue<std::pair<std::string, int>> pq;
+    std::priority_queue<std::pair<int, std::string>, std::vector<std::pair<int, std::string>>, std::greater<std::pair<int, std::string>>> pq;
     std::vector<std::string> visited;
 
-    pq.push(std::pair<std::string, int>(page_A, 0));
-    distances[0] = 0;
+    for (std::string v : vertice_set) {
+        distance.insert({v, INT32_MAX});
+    }
 
-    while (pq.top().first != page_B) {
-        std::pair<std::string, int> current = pq.top();
+    pq.push({0, page_A});
+    distance[page_A] = 0;
+
+    while (pq.top().second != page_B) {
+        std::pair<int, std::string> current = pq.top();
         pq.pop();  
-        
-        std::cout << current.first << std::endl;
+        if (!visited.empty() && std::find(visited.begin(), visited.end(), current.second) != visited.end()) {
+            continue;
+        }
 
-        for (std::string neighbor : adjacency_list[current.first]) {
-            // std::cout << neighbor << std::endl;
-            if (std::find(visited.begin(), visited.end(), neighbor) == visited.end()) {
-                
-                previous[neighbor] = current.first;
-                pq.push(std::pair<std::string, int>(neighbor, current.second + 1));
-            }
+        for (std::string neighbor : adjacency_list[current.second]) {
+            if ((!visited.empty() && std::find(visited.begin(), visited.end(), neighbor) != visited.end()) || current.first + 1 < distance[neighbor]) {
+                pq.push({current.first + 1, neighbor});
+                previous[neighbor] = current.second;  
+                distance[neighbor] = current.first + 1;
+            } 
 
 
         }
-        visited.push_back(current.first); 
+        visited.push_back(current.second);
     }
 
 
 
     // PROBLEM WITH THIS BTW
-    // std::string curr = page_B;
-    // std::string prev = page_B;
-    // while (prev != page_A) {
-    //     std::string prev = previous[curr];
-    //     ret.push_back(prev)
-    //     curr = prev; 
-    // }
+    std::string curr = page_B;
+    while (curr != page_A) {
+        ret.insert(ret.begin(), curr);
+        curr = previous[curr];
+    }
+    ret.insert(ret.begin(), page_A);
     return ret;
 
 }

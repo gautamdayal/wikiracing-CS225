@@ -23,7 +23,8 @@ int main() {
     std::vector<std::string> path = dj.ShortestPath("a", "e");
 
     for (std::string s : path) {
-        std::cout << s << std::endl;
+        std::cout << s << ">";
     }
+    std::cout << std::endl;
     return 0;
 }
