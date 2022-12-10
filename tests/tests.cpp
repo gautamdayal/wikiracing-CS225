@@ -94,3 +94,54 @@ TEST_CASE("ShortestPathTest3") {
     REQUIRE(test.ShortestPath("b", "c") == b_to_c);
     REQUIRE(test.ShortestPath("e", "f") == e_to_f);
 }
+
+
+TEST_CASE("SCCTest1") {
+    WikiGraph test;
+    test.ParseFromFile("../tests/data/demofile_4.csv");
+
+    /*
+    SCC should equal
+    a, d, c, b
+    e, g, f
+    h
+    */
+
+
+    // REQUIRE(test.SCC() == );
+
+}
+
+
+TEST_CASE("SCCTest2") {
+    WikiGraph test;
+    test.ParseFromFile("../tests/data/demofile_5.csv");
+    
+    /*
+    SCC should equal
+    a, b, c
+    d
+    e
+    */
+
+
+    // REQUIRE(test.SCC() == );
+}
+
+
+TEST_CASE("SCCTest3") {
+    WikiGraph test;
+    test.ParseFromFile("../tests/data/demofile_6.csv");
+    
+    /*
+    SCC should equal
+    a, e, b
+    c, d, h
+    g, f
+    */
+
+
+    // REQUIRE(test.SCC() == );
+}
+
+
