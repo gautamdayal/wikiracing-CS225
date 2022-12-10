@@ -8,7 +8,7 @@
 #include <set>
 #include <queue>
 #include <algorithm>
-
+#include <stack>
 /**
  * @brief Class to store the connections between wikipedia pages as a graph data structure
  * 
@@ -59,7 +59,23 @@ class WikiGraph {
         */
         std::string PrintEdgeList();
 
+
+        /**
+         * @brief Function that returns Strongly Connected Components 
+         * @return A 2D matrix of Strong Connected Components
+         * 
+        */
+        std::vector<std::vector<std::string>> SCC();
+
+        // std::map<std::string, std::vector<std::string>> adjacency_list; // Definition of a 2D adjacency matrix
+
     private:
         std::map<std::string, std::vector<std::string>> adjacency_list; // Definition of a 2D adjacency matrix
         std::set<std::string> vertice_set;
+
+
+        void fillOrder(std::string i, std::vector<std::string> &visited, std::stack<std::string> &s);
+        void DFS(std::string i, std::vector<std::string> &visited);
+        WikiGraph transpose();
+        
 };

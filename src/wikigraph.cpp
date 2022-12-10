@@ -98,3 +98,86 @@ std::vector<std::string> WikiGraph::ShortestPath(std::string page_A, std::string
     return ret;
 
 }
+
+std::vector<std::vector<std::string>> WikiGraph::SCC() {
+    std::stack<std::string> s;
+    std::vector<std::string> visited;
+
+
+    std::set<std::string>::iterator set_iter;
+
+    for (set_iter = vertice_set.begin(); set_iter != vertice_set.end(); ++set_iter) {
+
+        if (std::find(visited.begin(), visited.end(), *set_iter) == visited.end()) {
+            fillOrder(*set_iter, visited, s);
+        }
+    }
+
+    WikiGraph gr = transpose();
+
+    visited.clear();
+
+    while (!s.empty()) {
+        std::string temp = s.top();
+        s.pop();
+
+
+        if (std::find(visited.begin(), visited.end(), temp) == visited.end()) {
+            gr.DFS(temp, visited);
+            std::cout << std::endl;
+        }
+    }
+    return {{"Nothing"}};
+
+}
+
+void WikiGraph::DFS(std::string i, std::vector<std::string> &visited) {
+
+    visited.push_back(i);
+
+    std::cout << i << " ";
+
+    std::vector<std::string>::iterator iter;
+    for (iter = adjacency_list[i].begin(); iter != adjacency_list[i].end(); ++iter) {
+        if (std::find(visited.begin(), visited.end(), *iter) == visited.end()) {
+            DFS(*iter, visited);
+        }
+    }
+}
+
+
+void WikiGraph::fillOrder(std::string i, std::vector<std::string> &visited, std::stack<std::string> &s) {
+    visited.push_back(i);
+
+    std::vector<std::string>::iterator iter;
+
+    for (iter = adjacency_list[i].begin(); iter != adjacency_list[i].end(); ++iter) {
+        if (std::find(visited.begin(), visited.end(), *iter) == visited.end()) {
+            fillOrder(*iter, visited, s);
+        }
+    }
+    
+
+    s.push(i);
+
+}
+
+
+
+WikiGraph WikiGraph::transpose() {
+    WikiGraph g;
+
+    std::set<std::string>::iterator set_iter;
+    for (set_iter = vertice_set.begin(); set_iter != vertice_set.end(); set_iter++) {
+        std::vector<std::string>::iterator iter;
+        for (iter = adjacency_list[*set_iter].begin(); iter != adjacency_list[*set_iter].end(); ++iter) {
+            g.adjacency_list[*iter].push_back(*set_iter);
+        }
+
+    }
+
+
+    return g;
+
+
+}
