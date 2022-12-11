@@ -86,9 +86,6 @@ std::vector<std::string> WikiGraph::ShortestPath(std::string page_A, std::string
         visited.push_back(current.second);
     }
 
-
-
-    // PROBLEM WITH THIS BTW
     std::string curr = page_B;
     while (curr != page_A) {
         ret.insert(ret.begin(), curr);
@@ -102,7 +99,7 @@ std::vector<std::string> WikiGraph::ShortestPath(std::string page_A, std::string
 std::vector<std::vector<std::string>> WikiGraph::SCC() {
     std::stack<std::string> s;
     std::vector<std::string> visited;
-
+    std::vector<std::vector<std::string>> strongly_connected_components;
 
     std::set<std::string>::iterator set_iter;
 
@@ -123,24 +120,25 @@ std::vector<std::vector<std::string>> WikiGraph::SCC() {
 
 
         if (std::find(visited.begin(), visited.end(), temp) == visited.end()) {
-            gr.DFS(temp, visited);
-            std::cout << std::endl;
+            std::vector<std::string> component;
+            gr.DFS(temp, visited, component);
+            strongly_connected_components.push_back(component);
+            component.clear();
         }
     }
-    return {{"Nothing"}};
+    return strongly_connected_components;
 
 }
 
-void WikiGraph::DFS(std::string i, std::vector<std::string> &visited) {
+void WikiGraph::DFS(std::string i, std::vector<std::string> &visited, std::vector<std::string> &component) {
 
     visited.push_back(i);
-
-    std::cout << i << " ";
+    component.push_back(i);
 
     std::vector<std::string>::iterator iter;
     for (iter = adjacency_list[i].begin(); iter != adjacency_list[i].end(); ++iter) {
         if (std::find(visited.begin(), visited.end(), *iter) == visited.end()) {
-            DFS(*iter, visited);
+            DFS(*iter, visited, component);
         }
     }
 }

@@ -75,7 +75,7 @@ class WikiGraph {
 
 
         void fillOrder(std::string i, std::vector<std::string> &visited, std::stack<std::string> &s);
-        void DFS(std::string i, std::vector<std::string> &visited);
+        void DFS(std::string i, std::vector<std::string> &visited, std::vector<std::string>& component);
         WikiGraph transpose();
         
 };
