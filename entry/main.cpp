@@ -7,7 +7,7 @@ int main() {
     std::string file;
     while (ifs.good()) {
         ifs >> file;
-        std::cout << "../data/" + file + ".csv" << std::endl;
+        // std::cout << "../data/" + file + ".csv" << std::endl;
         if (!file.empty()) {
             file_names.push_back("../data/" + file + ".csv");
             file.clear();
@@ -28,18 +28,22 @@ int main() {
     //     std::cout << s << ">";
     // }
     // std::cout << std::endl;
-
-
-    std::vector<std::vector<std::string>> components = dj.SCC();
-    std::cout << std::endl;
-    std::cout << "Components:" << std::endl;
-    for (std::vector<std::string>& component: components) {
-        if (component.size() > 1) {
-            for (std::string& page : component) {
-                std::cout << page << ", ";
-            }
-            std::cout << std::endl;
-        }
+    std::cout << "Finding the Shortest Paths" << std::endl;
+    std::vector<std::string> path = dj.ShortestPath("/wiki/Hadendoa", "/wiki/Little_nightjar");
+    for (std::string s : path) {
+        std::cout << s << ">";
     }
+    std::cout << std::endl;
+    // std::vector<std::vector<std::string>> components = dj.SCC();
+    // std::cout << std::endl;
+    // std::cout << "Components:" << std::endl;
+    // for (std::vector<std::string>& component: components) {
+    //     if (component.size() > 1) {
+    //         for (std::string& page : component) {
+    //             std::cout << page << ", ";
+    //         }
+    //         std::cout << std::endl;
+    //     }
+    // }
     return 0;
 }
