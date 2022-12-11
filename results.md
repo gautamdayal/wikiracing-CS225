@@ -68,20 +68,20 @@ Start: "e", Destination: "f": "e" -> "d" -> "f"
 In order to test the implementation of Kosarju's Algorithm, the following graphs were used to generate lists of strongly connected components within the graph. The groups of strongly connected nodes was compared to the actual solution to ensure the algorithm implementation was correct.
 
 
-<img src="https://github.com/gautamdayal/wikiracing-CS225/blob/main/tests/graphs/demofile_3.png" alt="demofile4" width="400"/>
+<img src="https://github.com/gautamdayal/wikiracing-CS225/blob/main/tests/graphs/demofile_4.png" alt="demofile4" width="400"/>
 
 The alogrithm was used on the graph above to find the strongly connected components. The test can be seen as the "SCCTest1" test in the test.cpp file.
 
 Strongly Connected Components: [a, b, c, d], [e, g, f], [h]
 
 
-<img src="https://github.com/gautamdayal/wikiracing-CS225/blob/main/tests/graphs/demofile_3.png" alt="demofile5" width="400"/>
+<img src="https://github.com/gautamdayal/wikiracing-CS225/blob/main/tests/graphs/demofile_5.png" alt="demofile5" width="400"/>
 
 The alogrithm was used on the graph above to find the strongly connected components. The test can be seen as the "SCCTest2" test in the test.cpp file.
  
 Strongly Connected Components: [a, b, c], [d], [e]
 
-<img src="https://github.com/gautamdayal/wikiracing-CS225/blob/main/tests/graphs/demofile_3.png" alt="demofile6" width="400"/>
+<img src="https://github.com/gautamdayal/wikiracing-CS225/blob/main/tests/graphs/demofile_6.png" alt="demofile6" width="400"/>
 
 The alogrithm was used on the graph above to find the strongly connected components. The test can be seen as the "SCCTest3" test in the test.cpp file.
  
