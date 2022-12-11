@@ -14,3 +14,7 @@ Here's an outline of how our code and written deliverables are organized in this
 
 ## Running Instructions
 
+
+## Documenation
+
+In addition to commented code, a Doxygen page for the `wikigraph` class and its methods can be found [here](https://gautamdayal.github.io/wikiracing-CS225/class_wiki_graph.html). 
