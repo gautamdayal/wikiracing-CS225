@@ -1,17 +1,6 @@
 # Results
 
-
-
 ## Algorithms
-
-### File Parsing:
-
-#### Unit Tests:
-
-#### Full Scale Tests:
-
-
-
 
 ### Dijkstra's Algorithm:
 #### Unit Tests:
@@ -61,6 +50,15 @@ Start: "e", Destination: "f": "e" -> "d" -> "f"
 
 #### Full Scale Test:
 
+The image below shows the shortest path from the "Silicon" Wikiepdia page to the "Acid" Wikipedia page.
+
+<img src="https://github.com/gautamdayal/wikiracing-CS225/blob/main/tests/FullScaleShortest1.png" alt="demofile3" width="400"/>
+
+The image below shows the shortest path from the "University of Illinois Urbana-Champaign" Wikiepdia page to the "United States" Wikipedia page.
+
+<img src="https://github.com/gautamdayal/wikiracing-CS225/blob/main/tests/FullScaleShortest2.png" alt="demofile3" width="400"/>
+
+
 
 ### Kosarju's Algorithm:
 #### Unit Tests:
@@ -88,4 +86,7 @@ The alogrithm was used on the graph above to find the strongly connected compone
 Strongly Connected Components: [a, e, b], [c, d, h], [g, f]
 
 #### Full Scale Test:
+
+
+
 
