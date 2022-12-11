@@ -2,6 +2,8 @@
 
 CS 225 final project that crawls Wikipedia to find pages linked out of a starting page, stores this information as a graph (adjacency list), and performs two different algorithms on the graph: Dijkstra's shortest path, and the strongly connected components algorithm. 
 
+**Group members**: Gautam Dayal, Aryaman Dwivedi, Rishi Patel
+
 ## Organization
 
 Here's an outline of how our code and written deliverables are organized in this repo
