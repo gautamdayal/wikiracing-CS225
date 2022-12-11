@@ -96,19 +96,14 @@ TEST_CASE("ShortestPathTest3") {
 }
 
 
+
 TEST_CASE("SCCTest1") {
     WikiGraph test;
     test.ParseFromFile("../tests/data/demofile_4.csv");
 
-    /*
-    SCC should equal
-    a, d, c, b
-    e, g, f
-    h
-    */
+    std::vector<std::vector<std::string>> sccs = {{"a", "d", "c", "b"},{"e", "g", "f"},{"h"}};
 
-
-    // REQUIRE(test.SCC() == );
+    REQUIRE(test.SCC() == sccs);
 
 }
 
@@ -117,15 +112,11 @@ TEST_CASE("SCCTest2") {
     WikiGraph test;
     test.ParseFromFile("../tests/data/demofile_5.csv");
     
-    /*
-    SCC should equal
-    a, b, c
-    d
-    e
-    */
 
 
-    // REQUIRE(test.SCC() == );
+    std::vector<std::vector<std::string>> sccs = {{"a", "b", "c"},{"d"},{"e"}};
+
+    REQUIRE(test.SCC() == sccs);
 }
 
 
@@ -133,15 +124,9 @@ TEST_CASE("SCCTest3") {
     WikiGraph test;
     test.ParseFromFile("../tests/data/demofile_6.csv");
     
-    /*
-    SCC should equal
-    a, e, b
-    c, d, h
-    g, f
-    */
+    std::vector<std::vector<std::string>> sccs = {{"a", "e", "b"},{"c", "d", "h"},{"g", "f"}};
 
-
-    // REQUIRE(test.SCC() == );
+    REQUIRE(test.SCC() == sccs);
 }
 
 
