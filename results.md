@@ -16,36 +16,33 @@
 ### Dijkstra's Algorithm:
 #### Unit Tests:
 
+In order to test the implementation of Dijkstra's Algorithm, the following graphs were used to generate the shortest path from a start point to a destination point. THe path returned was then compared with the real shortest path to ensure the algorithm implementation was correct. 
+
+
 Unit Test 1: Small graph with 5 nodes
 
 <img src="https://github.com/gautamdayal/wikiracing-CS225/blob/main/tests/graphs/demofile.png" alt="demofile" width="400"/>
 
-Shortest Path from "a" to "c": 
+The following start and destination points were used on the graph above, in which all the paths returned were correct. The test can be seen as the "ShortestPathTest1" in the test.cpp file. 
 
-Actual: a -> c
+Start: "a", Destination: "c": "a" -> "c"
 
-Dijkstra's Algorithm: a -> c
+Start: "a", Destination: "e": "a" -> "b" -> "e"
 
-Shortest Path from "a" to "e":
-
-Actual: a -> b -> e
-
-Dijkstra's Algorithm: a -> b -> e
-
-Shortest Path from "c" to "e":
-
-Actual: c -> d -> e
-
-Dijkstra's Algorithm: c -> d -> e
+Start: "c", Destination: "e": "c" -> "d" -> "e"
 
 
 Unit Test 2: Advanced graph with 11 nodes
 
 <img src="https://github.com/gautamdayal/wikiracing-CS225/blob/main/tests/graphs/demofile_2.png" alt="demofile2" width="400"/>
 
+The following start and destination points were used on the graph above, in which all the paths returned were correct. The test can be seen as the "ShortestPathTest2" in the test.cpp file. 
+
 Unit Test 3: Advanced graph with 7 nodes
 
 <img src="https://github.com/gautamdayal/wikiracing-CS225/blob/main/tests/graphs/demofile_3.png" alt="demofile3" width="400"/>
+
+The following start and destination points were used on the graph above, in which all the paths returned were correct. The test can be seen as the "ShortestPathTest3" in the test.cpp file. 
 
 #### Full Scale Test:
 
