@@ -84,9 +84,3 @@ Strongly Connected Components: [a, b, c], [d], [e]
 The alogrithm was used on the graph above to find the strongly connected components. The test can be seen as the "SCCTest3" test in the test.cpp file.
  
 Strongly Connected Components: [a, e, b], [c, d, h], [g, f]
-
-#### Full Scale Test:
-
-
-
-
