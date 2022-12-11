@@ -18,7 +18,7 @@
 
 Unit Test 1: Small graph with 5 nodes
 
-
+![alt test](https://github.com/gautamdayal/wikiracing-CS225/blob/main/tests/graphs/demofile.png)
 
 Unit Test 2: Advanced graph with 11 nodes
 
